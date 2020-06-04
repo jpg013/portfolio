@@ -66,3 +66,15 @@
   border-radius: 50%;
   object-fit: contain;
 }
+
+.sidebar-social {
+  padding: 40px 10px;
+}
+
+.sidebar-social-title {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 300;
+  display: block;
+  padding-bottom: 10px;
+}
