@@ -1,0 +1,205 @@
+/* 
+  Portfolio Page
+ */
+ .portfolio-title {
+  line-height: 1;
+  color: #555;
+  display: block;
+}
+
+.portfolio-title > h1 {
+  font-weight: 400;
+  text-shadow: 1px 1px rgba(0,0,0,.3);
+  font-size: 36px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+.portfolio-description {
+  display: block;
+  color: #555;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: .3px;
+}
+
+.portfolio-description a {
+  text-decoration: none;
+  color: #ad1457;
+  font-weight: 400;
+}
+
+.portfolio-timeline {
+  display: block;
+  padding: 20px 0 0 120px;
+
+}
+
+.portfolio-timeline ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline-element {
+  background-color: transparent;
+  display: flex;
+  flex-flow: row nowrap;
+  position: relative;
+}
+
+.timeline-date {
+  width: 140px;
+  left: -160px;
+  box-sizing: border-box;
+  position: absolute;
+  height: 100%;
+  border-right: 1px solid rgba(0,0,0,0.14);
+}
+
+.timeline-date::after {
+  height: 10px;
+  width: 10px;
+  background-color: #00838f;
+  position: absolute;
+  right: -5.5px;
+  top: -5px;
+  border-radius: 50%;
+  content: "";
+}
+
+.timeline-date div {
+  color: #555;
+  font-size: 14px;
+  font-weight: 300;
+  position: absolute;
+  right: 0;
+  top: -8px;
+  text-transform: capitalize;
+  padding-right: 15px;
+  line-height: 16px;
+  letter-spacing: .5px;
+}
+
+.project-contents {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border-top: 1px solid rgba(0,0,0,0.14);
+  padding: 0 0 30px 0;
+  margin: 0 30px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(0,0,0,0.14);
+  padding-top: 20px;
+}
+
+.project-contents.no-border {
+  border-top: 1px solid transparent;
+}
+
+.project-details {
+  display: block;
+  width: 50%;
+  color: #555;
+}
+
+.project-title {
+  font-weight: 400;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+.project-title > a {
+  text-decoration: none;
+  color: #555;
+}
+
+.project-title > a:hover {
+  text-decoration: underline;
+  color: #ad1457;
+}
+
+.project-text {
+  display: block;
+}
+
+.project-text > p {
+  color: #555;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: .3px;
+  margin: 0;
+  padding: 0;
+  line-height: 20px;
+  margin: 5px 0;
+}
+
+.project-overview > ul {
+  list-style-type: circle;
+  display: block;
+  margin: 0;
+  padding: 10px 40px;
+  margin-bottom: 10px;
+}
+
+.project-overview > ul > li {
+  color: #555;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: .3px;
+  margin: 0 0 5px 0;
+  padding: 0;
+  line-height: 20px;
+}
+
+.project-technologies {
+  display: block;
+}
+
+.project-technologies > h3 {
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: .1px;
+  color: currentColor;
+}
+
+.project-technologies > ul {
+  margin-top: 10px;
+  display: inline-block;
+  list-style: none;
+}
+
+.project-technologies > ul > li {
+  display: inline-block;
+}
+
+.project-gallery {
+  display: flex;
+  position: relative;
+  flex-flow: column nowrap;
+  width: 50%;
+  align-items: center;
+  height: 100%;
+  padding-top: 20px;
+}
+
+.project-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  object-fit: contain;
+}
+
+.project-image {
+  width: 100%;
+  margin-bottom: 20px;
+  object-fit: contain;
+  display: block;
+}

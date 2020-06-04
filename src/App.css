@@ -18,7 +18,7 @@ body {
   right: 0;
   top: 0;
   bottom: 0;
-  overflow: auto;
+  overflow: hidden;
 }
 
 /* Transition Timings*/
@@ -39,4 +39,43 @@ body {
 .fade-short-exit-active {
   opacity: 0;
   transition: opacity 200ms ease-in;
+}
+
+/* Board */
+.board {
+  background-color: #FFFFFF;
+  padding: 40px 50px;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.board-title {
+  line-height: 1;
+  color: #555;
+  display: block;
+}
+
+.board-title > h1 {
+  font-weight: 400;
+  text-shadow: 1px 1px rgba(0,0,0,.3);
+  font-size: 36px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+.board-description {
+  display: block;
+  color: #555;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: .3px;
+}
+
+.board-description a {
+  text-decoration: none;
+  color: #ad1457;
+  font-weight: 400;
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // Import custom web components
 import './web-components/TypingEffect';
+import './web-components/BasicChip';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
