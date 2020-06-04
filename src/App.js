@@ -8,11 +8,13 @@ function App() {
   return (
     <div className="App">
       <Sidebar />
-      <Switch>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
+      <div className="site-main">
+        <Switch>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
     </div>
   );
 }

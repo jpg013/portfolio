@@ -45,14 +45,14 @@
   visibility: visible;
 }
 
-.side-nav > ul > li > a.selected {
+.side-nav > ul > li > a.active {
   color: #FFFFFF;
   font-weight: 400;
   pointer-events: none;
   cursor: default;
 }
 
-.side-nav > ul > li > a.selected::after {
+.side-nav > ul > li > a.active::after {
   display: block;
   box-sizing: border-box;
   position: absolute;

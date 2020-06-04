@@ -6,15 +6,15 @@ import { SocialIcons } from 'appComponents';
 
 const Sidebar = () => {
   return (
-    <aside class="sidebar">
-      <div class="sidebar-inner">
-        <div class="sidebar-avatar">
-          <div class="sidebar-avatar-portrait">
+    <aside className="sidebar">
+      <div className="sidebar-inner">
+        <div className="sidebar-avatar">
+          <div className="sidebar-avatar-portrait">
             <a href="/">
               <img src={ portraitSrc } alt="portrait" />
             </a>
           </div>
-          <div class="sidebar-avatar-details">
+          <div className="sidebar-avatar-details">
             <h1>Justin Paul Graber</h1>
             <h2>full-stack software engineer</h2>
           </div>
@@ -22,8 +22,8 @@ const Sidebar = () => {
         
         <SidebarNav />
 
-        <div class="sidebar-social">
-          <div class="sidebar-social-title">get in touch</div>
+        <div className="sidebar-social">
+          <div className="sidebar-social-title">get in touch</div>
           <SocialIcons />
         </div>
       </div>

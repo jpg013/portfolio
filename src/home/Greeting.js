@@ -1,34 +1,53 @@
-import React from 'react'
-import Greeting from './Greeting';
+import React, { useState, useEffect, useRef } from 'react';
+import { CSSTransition } from 'react-transition-group';
+import './Greeting.css';
 
-const Home = () => {
+const effectTimings = [
+    {
+      text: "Hi, ",
+      throttleInMs: 40,
+      delayInMs: 230
+    },
+    {
+      text: "I'm Justin,",
+      throttleInMs: 40,
+      delayInMs: 950 
+    },
+]
+
+const Greeting = () => {
+  const [ displayMsg, setDisplayMsg ] = useState(false);
+  const typingEffectRef = useRef(null);
+
+  // run effect once on mount
+  useEffect(() => {
+    setDisplayMsg(true);
+    typingEffectRef.current.timings = effectTimings
+  }, []);
+  
   return (
-    <div>
-      <Greeting />
+    <div className="home-greeting">
+      <div className="home-greeting-title">
+        <h1>
+          <typing-effect ref={ typingEffectRef }></typing-effect>
+        </h1>
+      </div>
+      <div className="home-greeting-message">
+        <CSSTransition in={ displayMsg } timeout={ 5000 } classNames="home-greeting-message-transition">
+          <h2>a full-stack software engineer based out of the Kansas City area.</h2>
+        </CSSTransition>
+      </div>
     </div>
   )
 }
 
-export default Home;
-
-
-// <!-- views/home.ejs -->
-
-// <%- include('../views/header') -%>
-// <%- include('../views/sidebar') -%>
-
-// <div class="site-main">
-//   <div class="home-greeting">
+// <div class="home-greeting">
 //     <div class="home-greeting-title">
 //       <h1>
 //         <typing-effect></typing-effect>
 //       </h1>
 //     </div>
-//     <div class="home-greeting-message"></div>
-//       <div class="home-buttons" id="home-buttons">
-//     </div>
-//   </div>
-// </div>
+//     <div class="home-greeting-message"></div>fade-in-short
 
 // <script type="text/javascript">
 //   const homeBtnsEl = document.getElementById('home-buttons')
@@ -89,4 +108,4 @@ export default Home;
 //   }, 1200)
 // </script>
 
-// <%- include('../views/footer') -%>
+export default Greeting;

@@ -19,13 +19,13 @@ const navItems = [
 
 const SidebarNav = () => {
   return (
-    <nav class="side-nav">
+    <nav className="side-nav">
       <ul>
         {
           navItems.map(curr => {
             return (
-              <li>
-                <NavLink to={ curr.route } activeStyle="selected">
+              <li key={ curr.name }>
+                <NavLink to={ curr.route }>
                   { curr.name }
                   <i></i>
                 </NavLink>
@@ -36,7 +36,7 @@ const SidebarNav = () => {
       </ul>
       <ul>
         <li>
-          <NavLink to="contact-me" activeStyle="selected">contact me<i></i></NavLink>
+          <NavLink to="contact-me">contact me<i></i></NavLink>
         </li>
         <li>
           <a rel="noopener noreferrer" target="_blank" href="https://medium.com/@justin.graber">personal blog<i></i></a>

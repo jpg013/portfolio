@@ -10,3 +10,33 @@ body {
   background-size: cover;
   font: 400 10px 'Roboto', 'Arial', sans-serif;
 }
+
+.site-main {
+  display: block;
+  position: fixed;
+  left: 460px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: auto;
+}
+
+/* Transition Timings*/
+.fade-short-enter {
+  opacity: 0;
+}
+
+.fade-short-enter-active {
+  opacity: 1;
+  transition: opacity 200ms ease-in;
+  transition-delay: 1200ms;
+}
+
+.fade-short-exit {
+  opacity: 1;
+}
+
+.fade-short-exit-active {
+  opacity: 0;
+  transition: opacity 200ms ease-in;
+}
