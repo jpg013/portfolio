@@ -1,8 +1,5 @@
 .home-greeting {
   display: block;
-  position: absolute;
-  top: 130px;
-  left: 80px;
   color: #FFFFFF;
   width: 600px;
 }
