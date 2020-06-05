@@ -1,0 +1,34 @@
+.skills-and-offer {
+  padding: 20px 15px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  column-gap: 50px;
+  row-gap: 15px;
+}
+
+.skills-and-offer-section {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.skills-and-offer-section > h2 {
+  font-weight: 500;
+  text-shadow: none;
+  font-size: 22px;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 10px;
+}
+
+.skills-and-offer-section > h2 .accent {
+  color: #00838f;  
+}
+
+.skill-item {
+  padding: 10px 0;
+  margin: 15px 0;
+}

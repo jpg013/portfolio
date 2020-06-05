@@ -1,0 +1,42 @@
+.contact-me {
+  display: block;
+  padding: 20px;
+}
+
+.contact-me-item {
+  height: 40px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  color: #ad1457;
+  text-decoration: none;
+}
+
+.contact-me-item .icon {
+  display: block;
+  height: 24px;
+  width: 24px;
+  fill: #ad1457;
+  margin-right: 5px;
+}
+
+.contact-me-item .icon.linkedin {
+  height: 22px;
+  width: 22px;
+  position: relative;
+  margin-left: 1px;
+  margin-right: 7px;
+}
+
+.contact-me-item span {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0.5;
+}
+
+.contact-me-item:hover {
+  text-decoration: underline;
+}

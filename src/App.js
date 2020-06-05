@@ -2,8 +2,10 @@ import React from 'react';
 import './App.css';
 import { Sidebar } from './sidebar';
 import { Switch, Route } from 'react-router-dom';
-import { Home } from './home'
-import { Portfolio } from './portfolio'
+import { Home } from './home';
+import { Portfolio } from './portfolio';
+import { ContactMe } from './contact-me';
+import { Offer } from './offer';
 
 function App() {
   return (
@@ -13,6 +15,12 @@ function App() {
         <Switch>
           <Route path="/portfolio">
             <Portfolio />
+          </Route>
+          <Route path="/contact-me">
+            <ContactMe />
+          </Route>
+          <Route path="/skills-and-offer">
+            <Offer />
           </Route>
           <Route path="/">
             <Home />
