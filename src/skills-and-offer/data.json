@@ -1,0 +1,106 @@
+[
+  {
+    "display": "frontend development",
+    "items": [
+      {
+        "title": "Javascript",
+        "value": 0.9
+      },
+      {
+        "title": "React / Redux",
+        "value": 0.8
+      },
+      {
+        "title": "HTML5",
+        "value": 0.8
+      },
+      {
+        "title": "CSS3",
+        "value": 0.7
+      },
+      {
+        "title": "D3",
+        "value": 0.7
+      },
+      {
+        "title": "Typescript",
+        "value": 0.5
+      },
+      {
+        "title": "RxJS",
+        "value": 0.5
+      },
+      {
+        "title": "AngularJS",
+        "value": 0.4
+      }
+    ]
+  },
+  {
+    "display": "backend development",
+    "items": [
+      {
+        "title": "Node JS / Express",
+        "value": 0.9
+      },
+      {
+        "title": "Rest / GraphQL",
+        "value": 0.8
+      },
+      {
+        "title": "Python / Flask",
+        "value": 0.5
+      },
+      {
+        "title": "Golang",
+        "value": 0.8
+      }
+    ]
+  },
+  {
+    "display": "database",
+    "items": [
+      {
+        "title": "Mysql",
+        "value": 0.5
+      },
+      {
+        "title": "Elasticsearch",
+        "value": 0.8
+      },
+      {
+        "title": "MongoDB",
+        "value": 0.7
+      },
+      {
+        "title": "Redis",
+        "value": 0.4
+      }
+    ]
+  },
+  {
+    "display": "architecture",
+    "items": [
+      {
+        "title": "Kafka",
+        "value": 0.6
+      },
+      {
+        "title": "NGINX",
+        "value": 0.7
+      },
+      {
+        "title": "Microservices",
+        "value": 0.8
+      },
+      {
+        "title": "Docker",
+        "value": 0.8
+      },
+      {
+        "title": "AWS",
+        "value": 0.3
+      }
+    ]
+  }
+]

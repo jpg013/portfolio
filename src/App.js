@@ -5,7 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 import { Home } from './home';
 import { Portfolio } from './portfolio';
 import { ContactMe } from './contact-me';
-import { Offer } from './offer';
+import { SkillsAndOffer } from './skills-and-offer';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
             <ContactMe />
           </Route>
           <Route path="/skills-and-offer">
-            <Offer />
+            <SkillsAndOffer />
           </Route>
           <Route path="/">
             <Home />
