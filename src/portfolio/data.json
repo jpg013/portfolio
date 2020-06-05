@@ -175,4 +175,28 @@
     "Contributed extensively to refactoring database systems and SQL stored procedures for performance increases.",
     "Collaborated with developers and product managers to provide creative and innovative solutions for clients."
   ] 
-}]
+},
+{
+  "name": "University of Kansas",
+  "url": "https://ku.edu/",
+  "description_html": "<p>Masters of Computer Science in Computer Engineering</p>",
+  "date": "2011 - ongoing",
+  "overview": [
+    "Pursued a Masters of Computer Science in Computer Engineer",
+    "Completed coursework in Information Retrieval, Software Systems, Operating Systems, Data Structures and Advanced Graduate Algorithms."
+  ],
+  "tech": [],
+  "images": ["images/ku_eecs.png"]
+},
+{
+  "name": "Missouri State Univerity",
+  "url": "https://ku.edu/",
+  "description_html": "<p>Bachelor of Science in Engineering Physics</p>",
+  "date": "2009 - 2011",
+  "overview": [
+    "Completed a Bachelor of Science in Engineering Physics with a Minor in Mathematics"
+  ],
+  "tech": [],
+  "images": ["images/msu.jpg"]
+}
+]
