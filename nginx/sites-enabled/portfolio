@@ -5,11 +5,13 @@ server {
   # Multiple hostnames separated by spaces.  Replace these as well.
   server_name  127.0.0.1;
 
-  # error_page 404 errors/404.html;
-  access_log /var/log/nginx/dunami-pr.access.log;
-  
   # Rewrite rules
-  rewrite ^\/(v\d+)\/?(.*) /$2 last;
+  # rewrite ^\/(v\d+)\/?(.*) /$2 last;
+
+  location /cv {
+    root /var/www/portfolio/pdf;
+    try_files $uri cv.pdf /cv.pdf =404;
+  }
   
   location / {
     root /var/www/portfolio;

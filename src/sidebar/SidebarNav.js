@@ -19,7 +19,7 @@ const SidebarNav = () => {
           </NavLink>
         </li>
         <li>
-          <a rel="noopener noreferrer" target="_blank" href="http://localhost:3000/cv">my cv<i></i></a>
+          <a rel="noopener noreferrer" target="_blank" href="http://localhost:8080/cv">my cv<i></i></a>
           <i></i>
         </li>
       </ul>
