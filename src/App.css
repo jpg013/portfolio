@@ -4,16 +4,25 @@
 }
 
 body {
-  background-color: #c5a6a6;
+  background-color: rgba(0, 0, 0, .24);
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   overflow: hidden;
-  background: url("/kansas_city.jpg") top center no-repeat #BABABA;
-  background-size: cover;
   font: 400 10px 'Roboto', 'Arial', sans-serif;
+}
+
+.app {
+  background: url("/images/kansas_city.jpg") top center no-repeat #BABABA;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
 }
 
 .site-main {

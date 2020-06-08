@@ -9,7 +9,7 @@ import { SkillsAndOffer } from './skills-and-offer';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Sidebar />
       <div className="site-main">
         <Switch>
