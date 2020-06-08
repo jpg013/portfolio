@@ -12,8 +12,8 @@ dockerPush() {
   fi
 
   docker build -t "${IMAGE}" .
-  docker tag "${IMAGE}" "${USER}/${IMAGE}:0.0.2"
-  docker push "${USER}/${IMAGE}:0.0.2"
+  docker tag "${IMAGE}" "${USER}/${IMAGE}:0.0.3"
+  docker push "${USER}/${IMAGE}:0.0.3"
 }
 
 dockerPush

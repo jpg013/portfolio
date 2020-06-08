@@ -1,10 +1,12 @@
 :root {
   --primary-action-color: #ad1457;
+  --primary-action-color-dark: #78002e;
+  --primary-action-color-light: #e35183;
   --theme-text-on-primary: #ffffff;
 }
 
 body {
-  background-color: rgba(0, 0, 0, .24);
+  background-color: rgba(0, 0, 0, .08);
   position: fixed;
   top: 0;
   left: 0;

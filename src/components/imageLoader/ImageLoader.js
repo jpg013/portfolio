@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-const ImageLoader = ({ images, children }) => {
+const ImageLoader = ({ images, children, renderLoading, delay=0  }) => {
   const [isLoaded, setIsLoaded] = useState(false);
-
-
   const makeImgEl = src => {
     const img = document.createElement('img');
     
@@ -19,8 +17,6 @@ const ImageLoader = ({ images, children }) => {
   }
 
   useEffect(() => {
-    // 
-    setIsLoaded(false);
     let counter = 0;
 
     images.forEach(img => {
@@ -32,14 +28,16 @@ const ImageLoader = ({ images, children }) => {
         counter--;
 
         if (counter === 0) {
-          setIsLoaded(true);
+          setTimeout(() => {
+            setIsLoaded(true);
+          }, delay)
         }
       });
     });
-  }, [images])
+  }, [images, delay]);
 
   if (!isLoaded) {
-    return null;
+    return renderLoading();
   }
 
   return (

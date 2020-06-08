@@ -7,17 +7,28 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { ImageLoader } from 'appComponents';
+import { ImageLoader, RippleLoader } from 'appComponents';
+
 
 const appImages = [
   'images/kansas_city.jpg',
   'images/portrait_1920x1920.jpg',
 ];
 
+const renderLoading = () => {
+  return (
+    <RippleLoader />
+  )
+}
+
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <ImageLoader images={ appImages }>
+      <ImageLoader 
+        images={ appImages } 
+        renderLoading={ renderLoading }
+        delay={ 2000 }
+        >
         <App />
       </ImageLoader>
     </Router>
