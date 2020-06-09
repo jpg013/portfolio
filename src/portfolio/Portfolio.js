@@ -1,6 +1,7 @@
 import React from 'react';
 import PortfolioTimeline from './PortfolioTimeline';
 import './Portfolio.css';
+import { Link } from 'react-router-dom';
 import data from './data.json';
 
 const Portfolio = () => {
@@ -10,7 +11,7 @@ const Portfolio = () => {
         <h1>portfolio</h1>
       </div>
       <div className="board-description">
-        <p>See my works below. For any questions, please <a href="/contact-me">contact me</a> and I'll be happy to respond in a timely manner.</p>
+        <p>See my works below. For any questions, please <Link to="/contact-me">contact me</Link> and I'll be happy to respond in a timely manner.</p>
       </div>
       <div className="portfolio-timeline">
         <ul>

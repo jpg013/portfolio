@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { Link } from 'react-router-dom';
 import './HomeButtons.css';
 
 const btnData = [
@@ -35,7 +36,7 @@ const HomeButtons = () => {
               classNames="home-btn-transition"
             >
               <div className="home-btn">
-                <a href={href}>{name}</a>
+                <Link to={ href }>{ name }</Link>
               </div>
             </CSSTransition>
           ))
