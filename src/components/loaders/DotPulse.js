@@ -5,6 +5,8 @@ const dotPulse = () => {
   return (
     <div className="dot-pulse-container">
       <div className="dot-pulse"></div>
+      <div className="dot-pulse"></div>
+      <div className="dot-pulse"></div>
     </div>
   )
 };

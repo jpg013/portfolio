@@ -1,66 +1,45 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-class ImageLoader extends React.PureComponent {
-  static propTypes = {
-    children: PropTypes.array.isRequired,
-    renderLoading: PropTypes.func.isRequired,
-  } 
+const makeImageElement = imgSrc => {
+  const img = document.createElement('img');
+  
+  img.setAttribute('src', imgSrc);
+  img.setAttribute('height', 0);
+  img.setAttribute('width', 0);
+  img.style.visibility = 'hidden';
+  img.style.height = 0;
+  img.style.width = 0;
+  document.body.appendChild(img);
+  
+  return img
+}
 
-  static defaultProps = {
-    renderLoading: () => null,
-  }
-
-  state = {
-    isLoaded: false,
-  }
-
-  makeImageElement(imgSrc) {
-    const img = document.createElement('img');
-    
-    img.setAttribute('src', imgSrc);
-    img.setAttribute('height', 0);
-    img.setAttribute('width', 0);
-    img.style.visibility = 'hidden';
-    img.style.height = 0;
-    img.style.width = 0;
-    document.body.appendChild(img);
-    
-    return img
-  }
-
-  componentDidMount() {
-    let counter = this.props.images.length;
-    
-    this.props.images.forEach(img => {
-      const imgEl = this.makeImageElement(img);
+const ImageLoader = ({ images, onLoad }) => {
+  useEffect(() => {
+    console.log("we here???");
+    images.forEach(imgSrc => {
+      const imgEl = makeImageElement(imgSrc);
 
       // Add Load Event listener
       imgEl.addEventListener('load', () => {
+        // remove image from body
         document.body.removeChild(imgEl);
-        // Decrement the counter
-        counter--;
-
-        if (counter === 0) {
-          this.setState(() => ({
-            isLoaded: true,
-          }))
-        }
+        onLoad();
       });
     });
-  }
+  }, [images, onLoad]);
 
-  render() {
-    if (!this.state.isLoaded) {
-      return this.props.renderLoading();
-    }
+  return (<></>)
+};
 
-    return (
-      <>
-        { this.props.children }
-      </>
-    )
-  }
+ImageLoader.propTypes = {
+  images: PropTypes.array.isRequired,
+  onLoad: PropTypes.func.isRequired,
+}
+
+ImageLoader.defaultProps = {
+  onLoad: () => undefined, 
 }
 
 export default ImageLoader;

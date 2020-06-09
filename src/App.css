@@ -95,3 +95,15 @@ body {
   color: #ad1457;
   font-weight: 400;
 }
+
+.app-loader {
+  display: block;
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  left: calc(50% - 100px);
+  top: calc(50% - 200px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
