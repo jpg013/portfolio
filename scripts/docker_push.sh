@@ -4,7 +4,7 @@ dockerPush() {
   IMAGE="portfolio-ui"
   USER="graber4"
   BUILD_SUCCESS=false
-  TAG="0.0.5"
+  TAG="0.0.6"
 
   npm run build && BUILD_SUCCESS=true
 
@@ -21,6 +21,7 @@ dockerPush() {
   docker stop portfolio
   docker rm portfolio
   docker pull "${USER}/${IMAGE}:${TAG}"
+  docker run -d -p 3000:80 --name portfolio "${USER}/${IMAGE}:${TAG}"
 }
 
 dockerPush
