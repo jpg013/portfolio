@@ -1,11 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const ImageLoader = ({ images, children, renderLoading, delay=0  }) => {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const makeImgEl = src => {
+class ImageLoader extends React.PureComponent {
+  static propTypes = {
+    children: PropTypes.array.isRequired,
+    renderLoading: PropTypes.func.isRequired,
+  } 
+
+  static defaultProps = {
+    renderLoading: () => null,
+  }
+
+  state = {
+    isLoaded: false,
+  }
+
+  makeImageElement(imgSrc) {
     const img = document.createElement('img');
     
-    img.setAttribute('src', src);
+    img.setAttribute('src', imgSrc);
     img.setAttribute('height', 0);
     img.setAttribute('width', 0);
     img.style.visibility = 'hidden';
@@ -16,35 +29,38 @@ const ImageLoader = ({ images, children, renderLoading, delay=0  }) => {
     return img
   }
 
-  useEffect(() => {
-    let counter = 0;
+  componentDidMount() {
+    let counter = this.props.images.length;
+    
+    this.props.images.forEach(img => {
+      const imgEl = this.makeImageElement(img);
 
-    images.forEach(img => {
-      counter++;
-      const imgEl = makeImgEl(img);
-
+      // Add Load Event listener
       imgEl.addEventListener('load', () => {
         document.body.removeChild(imgEl);
+        // Decrement the counter
         counter--;
 
         if (counter === 0) {
-          setTimeout(() => {
-            setIsLoaded(true);
-          }, delay)
+          this.setState(() => ({
+            isLoaded: true,
+          }))
         }
       });
     });
-  }, [images, delay]);
-
-  if (!isLoaded) {
-    return renderLoading();
   }
 
-  return (
-    <>
-      { children }
-    </>
-  )
-};
+  render() {
+    if (!this.state.isLoaded) {
+      return this.props.renderLoading();
+    }
+
+    return (
+      <>
+        { this.props.children }
+      </>
+    )
+  }
+}
 
 export default ImageLoader;

@@ -7,7 +7,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { ImageLoader, RippleLoader } from 'appComponents';
+import { ImageLoader, DotPulse } from 'appComponents';
 
 
 const appImages = [
@@ -17,7 +17,7 @@ const appImages = [
 
 const renderLoading = () => {
   return (
-    <RippleLoader />
+    <DotPulse />
   )
 }
 
