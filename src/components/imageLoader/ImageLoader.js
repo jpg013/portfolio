@@ -17,7 +17,6 @@ const makeImageElement = imgSrc => {
 
 const ImageLoader = ({ images, onLoad }) => {
   useEffect(() => {
-    console.log("we here???");
     images.forEach(imgSrc => {
       const imgEl = makeImageElement(imgSrc);
 

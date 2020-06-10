@@ -1,35 +1,35 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
+import { TypingEffect } from 'appComponents';
 import { CSSTransition } from 'react-transition-group';
 import './HomeGreeting.css';
 
 const effectTimings = [
-    {
-      text: "Hi, ",
-      throttleInMs: 40,
-      delayInMs: 330
-    },
-    {
-      text: "I'm Justin,",
-      throttleInMs: 40,
-      delayInMs: 950 
-    },
+  {
+    throttleInMs: 40,
+    delayInMs: 330,
+    html: ["H","i",",","&nbsp;"]
+  },
+  {
+    html: ["I", '\'', "m", "&nbsp;", "J", "u", "s", "t", "i", "n", ","],
+    throttleInMs: 40,
+    delayInMs: 950 
+  },
 ];
 
 const HomeGreeting = () => {
   const [ displayMsg, setDisplayMsg ] = useState(false);
-  const typingEffectRef = useRef(null);
 
   // run effect once on mount
   useEffect(() => {
     setDisplayMsg(true);
-    typingEffectRef.current.timings = effectTimings
+    // typingEffectRef.current.timings = effectTimings
   }, []);
   
   return (
     <div className="home-greeting">
       <div className="home-greeting-title">
         <h1>
-          <typing-effect ref={ typingEffectRef }></typing-effect>
+          <TypingEffect effectTimings={ effectTimings } />
         </h1>
       </div>
       <div className="home-greeting-message">
