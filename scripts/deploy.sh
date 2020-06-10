@@ -5,28 +5,6 @@ DOCKER_IMAGE="portfolio-ui"
 DOCKER_USER="graber4"
 TAG=""
 
-dockerPush() {
-  BUILD_SUCCESS=false
-  TAG="0.0.6"
-
-  npm run build && BUILD_SUCCESS=true
-
-  if [[ ! $BUILD_SUCCESS ]]; then
-    exit 1
-  fi
-
-  docker build -t "${IMAGE}" .
-  docker tag "${IMAGE}" "${USER}/${IMAGE}:${TAG}"
-  docker push "${USER}/${IMAGE}:${TAG}"
-
-  # SSH into ec2
-  ssh_ec2_ubuntu_1
-  docker stop portfolio
-  docker rm portfolio
-  docker pull "${USER}/${IMAGE}:${TAG}"
-  docker run -d -p 3000:80 --name portfolio "${USER}/${IMAGE}:${TAG}"
-}
-
 parseTag() {
   while [ "$1" != "" ]; do
     case $1 in
@@ -53,12 +31,15 @@ build() {
 }
 
 deploy() {
-  # SSH into ec2
-  ssh_ec2_ubuntu_1
-  docker stop portfolio
-  docker rm portfolio
+  # SSH into ec2 instance
+  ssh -i ~/.ssh/ec2_ubuntu_20_1.pem ubuntu@ec2-54-237-112-235.compute-1.amazonaws.com
+  
+  # stop / cleanup the existing container
+  docker stop "${DOCKER_IMAGE}"
+  docker rm "${DOCKER_IMAGE}"
   docker pull "${DOCKER_USER}/${DOCKER_IMAGE}:${TAG}"
-  docker run -d -p 3000:80 --name portfolio "${DOCKER_USER}/${DOCKER_IMAGE}:${TAG}"
+  # Run the new image on port 3000
+  docker run -d -p 3000:80 --name "${DOCKER_IMAGE}" "${DOCKER_USER}/${DOCKER_IMAGE}:${TAG}"
 }
 
 parseTag "$@"
