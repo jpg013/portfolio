@@ -1,0 +1,31 @@
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 180px;
+  width: 180px;
+}
+
+.avatar img {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+  display: block;
+  object-fit: contain;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 1000px) {
+  .avatar {
+    height: 140px;
+    width: 140px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .avatar {
+    height: 60px;
+    width: 60px;
+  }
+}

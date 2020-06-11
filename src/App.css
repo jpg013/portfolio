@@ -3,6 +3,13 @@
   --primary-action-color-dark: #78002e;
   --primary-action-color-light: #e35183;
   --theme-text-on-primary: #ffffff;
+  font-size: 10px;
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 1000px) {
+  :root {
+    font-size: 8px;
+  }
 }
 
 body {
@@ -16,8 +23,15 @@ body {
   font: 400 10px 'Roboto', 'Arial', sans-serif;
 }
 
+.label {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 300;
+  display: block;
+}
+
 .app {
-  background: url("/images/kansas_city.jpg") top center no-repeat #BABABA;
+  background: url("/images/kansas_city.jpg") center center no-repeat #BABABA;
   background-size: cover;
   position: absolute;
   top: 0;
@@ -30,11 +44,20 @@ body {
 .site-main {
   display: block;
   position: fixed;
-  left: 460px;
+  left: 25%;
   right: 0;
   top: 0;
   bottom: 0;
   overflow: hidden;
+  z-index: 5;
+}
+
+@media only screen and (max-width: 1000px) {
+  .site-main {
+    display: block;
+    width: 100%;
+    
+  }
 }
 
 /* Transition Timings*/

@@ -1,27 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
+import cx from 'classnames';
 import './Sidebar.css';
-import SidebarNav from './SidebarNav';
-import { SocialIcons } from 'appComponents';
-import { Link } from 'react-router-dom';
+import { SocialIcons, Avatar } from 'appComponents';
+import { MenuIcon } from 'appIcons';
+import { Navigation } from '../components';
 
 const Sidebar = () => {
+  const [expanded, setExpanded] = useState(false);
+
+  const renderMenuBtn = () => {
+    return (
+      <button className="nav-menu-button" onClick={ () => setExpanded(!expanded)}>
+        <MenuIcon />
+      </button>
+    );
+  }
+  
+  const cns = cx('sidebar', {
+    'sidebar-expanded': expanded,
+  });
+
   return (
-    <aside className="sidebar">
+    <aside className={ cns }>
       <div className="sidebar-inner">
-        <div className="sidebar-avatar">
-          <div className="sidebar-avatar-portrait">
-            <Link to="/">
-              <img src={ process.env.PUBLIC_URL + 'images/portrait_1920x1920.jpg' } alt="portrait" />
-            </Link>
-          </div>
-          <div className="sidebar-avatar-details">
-            <h1>Justin Paul Graber</h1>
+        <Avatar />
+
+        { renderMenuBtn() }
+
+        <div className="sidebar-title">
+          <h1>Justin Paul Graber</h1>
             <h2>full-stack software engineer</h2>
-          </div>
         </div>
-        <SidebarNav />
-        <div className="sidebar-social">
-          <div className="sidebar-social-title">get in touch</div>
+
+        <div className="nav-container">
+          <Navigation />
+        </div>
+        
+        <div className="nav-social">
+          <span className="label">get in touch</span>
           <SocialIcons />
         </div>
       </div>

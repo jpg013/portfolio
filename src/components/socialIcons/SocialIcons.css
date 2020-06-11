@@ -19,6 +19,10 @@
   margin-right: 10px;
 }
 
+.social-icons svg:hover {
+  fill: rgba(255, 255, 255, 1);
+}
+
 .social-icons .svg-linkedin {
   height: 18px;
   width: 18px;

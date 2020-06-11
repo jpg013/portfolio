@@ -15,14 +15,6 @@
   line-height: 30px;
 }
 
-@media only screen and (max-width: 1000px) {
-  .side-nav > ul > li {
-    text-transform: uppercase;
-    font-size: 14px;
-    line-height: 50px;
-  }
-}
-
 .side-nav > ul > li > a {
   color: rgba(255, 255, 255, 0.8);
   font-weight: 300;
