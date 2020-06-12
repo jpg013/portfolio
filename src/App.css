@@ -12,6 +12,12 @@
   }
 }
 
+@media only screen and (max-width: 1000px) {
+  :root {
+    font-size: 8px;
+  }
+}
+
 body {
   background-color: rgba(0, 0, 0, .08);
   position: fixed;
@@ -83,7 +89,7 @@ body {
 /* Board */
 .board {
   background-color: #FFFFFF;
-  padding: 40px 50px;
+  padding: 4rem 5rem;
   height: 100%;
   box-sizing: border-box;
   overflow: auto;
