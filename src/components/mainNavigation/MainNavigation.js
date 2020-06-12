@@ -1,10 +1,20 @@
 import React from 'react';
-import './SidebarNav.css';
+import './MainNavigation.css';
 import { NavLink } from 'react-router-dom';
+import { MenuIcon } from 'appIcons';
 
-const SidebarNav = () => {
+const NavToggleButton = ({ onClick }) => {
   return (
-    <nav className="side-nav">
+    <button className="nav-menu-button" onClick={ onClick }>
+      <MenuIcon />
+    </button>
+  );
+}
+
+export default ({ onClick }) => {
+  return (
+    <nav className="main-nav">
+      <NavToggleButton onClick={ onClick } />
       <ul>
         <li>
           <NavLink to="/portfolio">
@@ -37,7 +47,5 @@ const SidebarNav = () => {
         </li>
       </ul> 
     </nav>
-  )
+  );
 };
-
-export default SidebarNav;

@@ -1,6 +1,12 @@
 .home {
-  display: block;
-  position: absolute;
+  position: relative;
   top: 130px;
   left: 80px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .home {
+    padding: 20px;
+    position: static;
+  }
 }

@@ -1,21 +1,10 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
 import './Sidebar.css';
-import { SocialIcons, Avatar } from 'appComponents';
-import { MenuIcon } from 'appIcons';
-import { Navigation } from '../components';
+import { SocialIcons, Avatar, MainNavigation } from 'appComponents';
 
 const Sidebar = () => {
   const [expanded, setExpanded] = useState(false);
-
-  const renderMenuBtn = () => {
-    return (
-      <button className="nav-menu-button" onClick={ () => setExpanded(!expanded)}>
-        <MenuIcon />
-      </button>
-    );
-  }
-  
   const cns = cx('sidebar', {
     'sidebar-expanded': expanded,
   });
@@ -23,20 +12,17 @@ const Sidebar = () => {
   return (
     <aside className={ cns }>
       <div className="sidebar-inner">
-        <Avatar />
-
-        { renderMenuBtn() }
-
-        <div className="sidebar-title">
-          <h1>Justin Paul Graber</h1>
-            <h2>full-stack software engineer</h2>
-        </div>
-
-        <div className="nav-container">
-          <Navigation />
+        <div className="sidebar-avatar">
+          <Avatar />
         </div>
         
-        <div className="nav-social">
+        <div className="sidebar-nav">
+          <MainNavigation 
+            onClick={ () => setExpanded(!expanded) } 
+            />
+        </div>
+        
+        <div className="sidebar-social">
           <span className="label">get in touch</span>
           <SocialIcons />
         </div>

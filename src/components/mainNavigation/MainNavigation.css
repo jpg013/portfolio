@@ -1,29 +1,29 @@
-.side-nav {
+.main-nav {
   display: block;
   width: 100%;
 }
 
-.side-nav > ul {
+.main-nav > ul {
   list-style: none;
   padding: 0 10px;
   color: #FFFFFF;
 }
 
-.side-nav > ul > li {
+.main-nav > ul > li {
   text-transform: uppercase;
   font-size: 14px;
   line-height: 30px;
 }
 
 @media only screen and (max-width: 1000px) {
-  .side-nav > ul > li {
+  .main-nav > ul > li {
     text-transform: uppercase;
     font-size: 14px;
     line-height: 50px;
   }
 }
 
-.side-nav > ul > li > a {
+.main-nav > ul > li > a {
   color: rgba(255, 255, 255, 0.8);
   font-weight: 300;
   text-decoration: none;
@@ -32,7 +32,7 @@
   position: relative;
 }
 
-.side-nav > ul > li > a > i {
+.main-nav > ul > li > a > i {
   border: solid #FFF;
   border-width: 0 1px 1px 0;
   display: inline-block;
@@ -44,22 +44,22 @@
   visibility: hidden;
 }
 
-.side-nav > ul > li > a:hover {
+.main-nav > ul > li > a:hover {
   color: #FFFFFF;
 }
 
-.side-nav > ul > li > a:hover i {
+.main-nav > ul > li > a:hover i {
   visibility: visible;
 }
 
-.side-nav > ul > li > a.active {
+.main-nav > ul > li > a.active {
   color: #FFFFFF;
   font-weight: 400;
   pointer-events: none;
   cursor: default;
 }
 
-.side-nav > ul > li > a.active::after {
+.main-nav > ul > li > a.active::after {
   display: block;
   box-sizing: border-box;
   position: absolute;
@@ -72,4 +72,47 @@
   left: auto;
   right: -50px;
   content: ""
+}
+
+.nav-menu-button {
+  border: none;
+  height: 30px;
+  width: 30px;
+  top: 25px;
+  right: 20px;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  position: absolute;
+  display: none;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-menu-button:focus {
+  outline: none;
+}
+
+.nav-menu-button svg {
+  fill: currentColor;
+  height: 30px;
+  width: 30px;
+}
+
+.nav-menu-button:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+@media only screen and (max-width: 1000px) {
+  .main-nav {
+    /* position: absolute; */
+    /* bottom: 0; */
+  }
+
+  .nav-menu-button {
+    display: flex;
+    left: 10px;
+    top: -36px;
+  }
 }
