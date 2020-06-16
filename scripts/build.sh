@@ -30,23 +30,11 @@ build() {
   docker push "${DOCKER_USER}/${DOCKER_IMAGE}:${TAG}"
 }
 
-# deploy() {
-#   # SSH into ec2 instance
-#   ssh -i ~/.ssh/ec2_ubuntu_20_1.pem ubuntu@ec2-54-237-112-235.compute-1.amazonaws.com
-  
-#   # stop / cleanup the existing container
-#   docker stop "${DOCKER_IMAGE}"
-#   docker rm "${DOCKER_IMAGE}"
-#   docker pull "${DOCKER_USER}/${DOCKER_IMAGE}:${TAG}"
-#   # Run the new image on port 3000
-#   docker run -d -p 3000:80 --name "${DOCKER_IMAGE}" "${DOCKER_USER}/${DOCKER_IMAGE}:${TAG}"
-# }
-
 parseTag "$@"
 
 if [[ -z $TAG ]]; then
-  echo "Invalid Tag Argument"
-  exit 1
+  # Grep version from package json
+  TAG=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g' | sed 's/^ *//g')
 fi
 
 build
