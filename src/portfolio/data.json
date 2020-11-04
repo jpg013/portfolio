@@ -1,8 +1,41 @@
-[{
+[
+  {
+    "name": "EquipmentShare",
+    "url": "https://www.equipmentshare.com/",
+    "description_html": "<p>EquipmentShare offers machine rentals to companies all over the country and parts of the world. Their technology makes it easier to lease and track equipment rentals and they've been a disruptive leader in the industry for years.</p><p>I joined the Data Ops team at EquipmentShare as a Senior Data Engineer. Our team's primary focus was to build and maintain a streaming pipeline into our Snowflake Data Warehouse.</p>",
+    "date": "08/2015 - now",
+    "overview": [
+      "As a Senior Data Engineer at EquipmentShare our primary responsiblity was to build, maintain and support our main data warehouse. I helped architect and build a real-time streaming pipeline using AWS Kinesis Streams and Lambdas to stream billions of recorsd into Snowflake."
+    ],
+    "images": ["images/equipmentshare_main.png"],
+    "tech": [
+      {
+        "url": "https://www.snowflake.com/",
+        "name": "Snowflake"
+      },
+      {
+        "url": "https://www.python.org/",
+        "name": "Python"
+      },
+      {
+        "url": "https://aws.amazon.com/kinesis/data-streams/",
+        "name": "AWS Kinesis Data Streams"
+      },
+      {
+        "url": "https://aws.amazon.com/lambda/",
+        "name": "AWS Lambda"
+      },
+      {
+        "url": "https://www.postgresql.org/",
+        "name": "PostgreSQL"
+      }
+    ]
+  },
+  {
   "name": "Dunami Inc.",
   "url": "https://www.dunami.com/",
   "description_html": "<p>Dunami provides high level analytical solutions for finding relevant audiences, and identifying those with the most influence within a network.</p><p>During my time at Dunami I worked as a front-end engineer on a highly complex AngularJS application for two years. After that time I was promoted to UI/UX team lead and worked on architecting and building a new single page application in React and Redux.</p> <p>I also played a key role in migrating a large scale .Net application into a containerized Node JS microservice architecture with a GraphQL api gateway.</p>",
-  "date": "08/2015 - Now",
+  "date": "08/2015 - 08/2020",
   "overview": [
     "As the UI/UX team lead I was responsible for building and maintaing multiple large-scale single page applications in AngularJS and React / Redux.",
     "I designed and created multiple interactive data visualizations using D3, HTML5 and CSS3.",

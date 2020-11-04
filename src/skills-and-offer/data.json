@@ -75,6 +75,14 @@
       {
         "title": "Redis",
         "value": 0.4
+      },
+      {
+        "title": "PostgreSQL",
+        "value": 0.3
+      },
+      {
+        "title": "Snowflake Warehouse",
+        "value": 0.4
       }
     ]
   },
@@ -99,7 +107,7 @@
       },
       {
         "title": "AWS",
-        "value": 0.3
+        "value": 0.5
       }
     ]
   }
