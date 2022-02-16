@@ -1,0 +1,21 @@
+server {
+  # Replace this port with the right one for your requirements
+  listen 80;
+
+  # Multiple hostnames separated by spaces.  Replace these as well.
+  server_name  127.0.0.1;
+
+  # Rewrite rules
+  # rewrite ^\/(v\d+)\/?(.*) /$2 last;
+
+  location /cv {
+    root /var/www/portfolio/pdf;
+    try_files $uri cv.pdf /cv.pdf =404;
+  }
+  
+  location / {
+    root /var/www/portfolio;
+    index index.html index.htm;
+    try_files $uri $uri/ /index.html;
+  }
+}

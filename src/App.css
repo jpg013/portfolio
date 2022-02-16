@@ -1,38 +1,138 @@
-.App {
-  text-align: center;
+:root {
+  --primary-action-color: #ad1457;
+  --primary-action-color-dark: #78002e;
+  --primary-action-color-light: #e35183;
+  --theme-text-on-primary: #ffffff;
+  font-size: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media only screen and (max-width: 1200px) and (min-width: 1000px) {
+  :root {
+    font-size: 8px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media only screen and (max-width: 1000px) {
+  :root {
+    font-size: 8px;
+  }
+}
+
+body {
+  background-color: rgba(0, 0, 0, .08);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  font: 400 10px 'Roboto', 'Arial', sans-serif;
+}
+
+.label {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 300;
+  display: block;
+}
+
+.app {
+  background: url("/public/images/kansas_city.jpg") center center no-repeat #BABABA;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+}
+
+.site-main {
+  display: block;
+  position: fixed;
+  left: 25%;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 5;
+}
+
+@media only screen and (max-width: 1000px) {
+  .site-main {
+    display: block;
+    width: 100%;
+    position: static;
+  }
+}
+
+/* Transition Timings*/
+.fade-short-enter {
+  opacity: 0;
+}
+
+.fade-short-enter-active {
+  opacity: 1;
+  transition: opacity 200ms ease-in;
+  transition-delay: 1200ms;
+}
+
+.fade-short-exit {
+  opacity: 1;
+}
+
+.fade-short-exit-active {
+  opacity: 0;
+  transition: opacity 200ms ease-in;
+}
+
+/* Board */
+.board {
+  background-color: #FFFFFF;
+  padding: 4rem 5rem;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.board-title {
+  line-height: 1;
+  color: #555;
+  display: block;
+}
+
+.board-title > h1 {
+  font-weight: 400;
+  text-shadow: 1px 1px rgba(0,0,0,.3);
+  font-size: 36px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+.board-description {
+  display: block;
+  color: #555;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: .3px;
+}
+
+.board-description a {
+  text-decoration: none;
+  color: #ad1457;
+  font-weight: 400;
+}
+
+.app-loader {
+  display: block;
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  left: calc(50% - 100px);
+  top: calc(50% - 200px);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

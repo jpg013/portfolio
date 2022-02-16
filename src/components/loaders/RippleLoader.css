@@ -1,0 +1,76 @@
+.ripple-loader-container {
+  display: block;
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  left: calc(50% - 100px);
+  top: calc(50% - 200px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ripple-loader-circle {
+  height: 20px;
+  width: 20px;
+  background: linear-gradient(90deg, var(--primary-action-color-dark) 25%, var(--primary-action-color-light));
+  border-radius: 50%;
+  box-sizing: border-box;
+  position: absolute;
+  left: calc(50% - 10px);
+  top: calc(50% - 10px);
+  animation: flex 1s infinite;
+  animation-timing-function: linear;
+  z-index: 5;
+}
+
+.ripple-loader-wave {
+  display: flex;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  align-items: center;
+  border: 2px solid var(--primary-action-color-dark);
+  border-radius: 50%;
+  animation: grow 2s infinite;
+  animation-timing-function: ease-out;
+  z-index: 3;
+}
+
+.ripple-loader-wave-sec {
+  display: flex;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  align-items: center;
+  border: 2px solid var(--primary-action-color-dark);
+  border-radius: 50%;
+  animation: grow 2s infinite 1s;
+  animation-timing-function: ease-out;
+  z-index: 3;
+}
+
+@keyframes flex {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  0% {
+    transform: scale(1);
+  }
+}
+
+@keyframes grow {
+  from {
+    width: 0px;
+    height: 0px;
+    opacity: 1;
+  }
+  to {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+  }
+}

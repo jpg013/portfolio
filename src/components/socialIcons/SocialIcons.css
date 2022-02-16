@@ -1,0 +1,48 @@
+.social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 40px;
+}
+
+.social-icon-block {
+  height: 24px;
+  width: 24px;
+  margin-right: 10px;
+  display: block;
+}
+
+.social-icons svg {
+  height: 100%;
+  width: 100%;
+  fill: rgba(255, 255, 255, 0.8);
+  margin-right: 10px;
+}
+
+.social-icons svg:hover {
+  fill: rgba(255, 255, 255, 1);
+}
+
+.social-icons .svg-linkedin {
+  height: 18px;
+  width: 18px;
+  position: relative;
+  top: 3px;
+  left: 3px;
+}
+
+.social-icons .svg-github {
+  height: 20px;
+  width: 20px;
+  position: relative;
+  top: 2px;
+  left: 2px;
+}
+
+.social-icons .svg-twitter {
+  height: 22px;
+  width: 22px;
+  position: relative;
+  top: 1px;
+  left: 1px;
+}
