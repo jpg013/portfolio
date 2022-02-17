@@ -1,0 +1,55 @@
+name: Build Docker Image
+on:
+  push:
+    branches: [ master ]
+
+env:
+  DOCKER_REPO_NAME: "4graber/portfolio"
+jobs:
+  build_and_push_readycore_server_docker_image:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'pull_request' }}
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      -
+        name: Docker meta
+        id: docker_meta
+        uses: crazy-max/ghaction-docker-meta@v1
+        with:
+          images: ${{ env.DOCKER_REPO_NAME }}
+          tag-sha: false
+      -
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      -
+        name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+      - name: Set environment variables
+        # Handy little script found here https://gist.github.com/DarrenN/8c6a5b969481725a4413
+        # echo "APP_VERSION=$(cat ./app/package.json | grep version | head -1 |  awk -F: '{ print $2 }' | sed 's/[",]//g' | xargs)" >> $GITHUB_ENV
+        run: |
+          echo "APP_VERSION=$(git describe --tags --always --dirty)" >> $GITHUB_ENV
+      # - name: Tag Build Number
+      #   run: |
+      #     sed -i'.tmp' -e 's/"{BUILD_NUMBER}"/"${{ env.APP_VERSION }}"/g' ./app/package.json
+      #     rm -f ./app/package.json.tmp
+      -
+        name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./Dockerfile
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ env.DOCKER_REPO_NAME }}:${{ env.APP_VERSION }}
+          labels: ${{ steps.docker_meta.outputs.labels }}
+          # build-args: NPM_AUTH_TOKEN=${{ secrets.NPM_TOKEN }}
