@@ -1,4 +1,28 @@
-# Portfolio Dockerfile
+#Stage 1 - Build Source Code
+FROM node:lts-alpine as builder
+
+LABEL description="App Builder"
+
+USER root
+
+# ARG NPM_AUTH_TOKEN
+
+WORKDIR /@app
+
+COPY . /@app
+
+RUN rm -rf /@app/node_modules
+
+# Setup .npmrc file to credential private npm repo
+# RUN echo "@getready:registry=https://registry.npmjs.org" >> .npmrc
+# RUN echo "//registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN" >> .npmrc
+# RUN echo "always-auth=true" >> .npmrc
+
+RUN yarn install
+
+RUN yarn build
+
+# Stage 2 - Copy Files for Docker Images
 FROM ubuntu:latest
 
 LABEL MAINTAINER Justin Graber <jpg013@gmail.com>
@@ -22,7 +46,8 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 # Expose ports
 EXPOSE 80
 
-COPY ./build/ /usr/share/nginx/portfolio
-COPY ./build/ /var/www/portfolio
+
+COPY --from=builder /@app/build/ /usr/share/nginx/portfolio
+COPY --from=builder /@app/build/ /var/www/portfolio
 
 CMD ["/usr/sbin/nginx"]
