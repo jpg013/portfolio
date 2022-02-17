@@ -11,11 +11,15 @@ server {
   location /cv {
     root /var/www/portfolio/pdf;
     try_files $uri cv.pdf /cv.pdf =404;
+    # kill cache
+    expires -1;
   }
   
   location / {
     root /var/www/portfolio;
     index index.html index.htm;
     try_files $uri $uri/ /index.html;
+    # kill cache
+    expires -1;
   }
 }
